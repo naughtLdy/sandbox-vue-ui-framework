@@ -16,6 +16,10 @@ init:
 sfc: ## setup sfc
 	SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT=${SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT} ./bin/sfc.sh
 
+.PHONY: vuefile
+vuefile: ## setup vuefile
+	SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT=${SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT} ./bin/vuefile.sh
+
 .PHONE: start
 start: ## start
 	SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT=${SANDBOX_VUE_UI_FRAMEWORK_REPO_ROOT} ./bin/start.sh

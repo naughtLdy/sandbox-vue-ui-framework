@@ -14,6 +14,13 @@ make init
 make sfc
 ```
 
+## Build Vue File Library
+
+```bash
+make vuefile
+```
+
+
 ## Start
 
 ```bash
