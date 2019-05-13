@@ -1,5 +1,5 @@
 import { VueConstructor } from 'vue';
-import SandboxVueUiFrameworkPlougin from './plugins'
+import SandboxVueUiFrameworkPlougin from './plugins';
 import * as components from './components';
 
 const install = (Vue: VueConstructor, config = {}) => {
@@ -15,7 +15,7 @@ const install = (Vue: VueConstructor, config = {}) => {
 install.installed = false;
 
 const SandboxVueUiFramework = {
-  install
+  install,
 };
 
 // if (typeof window !== 'undefined' && window.Vue) {

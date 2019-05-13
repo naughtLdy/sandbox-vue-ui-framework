@@ -3,7 +3,7 @@ function createMessage(message: string, vm?: any, parent?: any): string | void {
     vm = {
       _isVue: true,
       $parent: parent,
-      $options: vm
+      $options: vm,
     };
   }
 
@@ -14,7 +14,10 @@ function createMessage(message: string, vm?: any, parent?: any): string | void {
     vm.$_alreadyWarned.push(message);
   }
 
-  return `[SandboxVueUiFramework] ${message}` + (vm ? generateComponentTrace(vm) : '');
+  return (
+    `[SandboxVueUiFramework] ${message}` +
+    (vm ? generateComponentTrace(vm) : '')
+  );
 }
 
 export function consoleInfo(message: string, vm?: any, parent?: any): void {
@@ -36,12 +39,12 @@ export function deprecate(
   original: string,
   replacement: string,
   vm?: any,
-  parent?: any
+  parent?: any,
 ) {
   consoleWarn(
     `'${original}' is deprecated, use '${replacement}' instead`,
     vm,
-    parent
+    parent,
   );
 }
 
@@ -104,7 +107,7 @@ function generateComponentTrace(vm: any): string {
               Array.isArray(vm)
                 ? `${formatComponentName(vm[0])}... (${vm[1]} recursive calls)`
                 : formatComponentName(vm)
-            }`
+            }`,
         )
         .join('\n')
     );

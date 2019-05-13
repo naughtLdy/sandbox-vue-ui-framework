@@ -2,7 +2,7 @@ import Vue, {
   Component,
   PluginFunction,
   VueConstructor,
-  DirectiveOptions
+  DirectiveOptions,
 } from 'vue';
 import './lib';
 import './alacarte';
@@ -32,7 +32,7 @@ export interface SandboxVueUiFrameworkObject extends Vue {
   readonly breakpoint: Readonly<SandboxVueUiFrameworkBreakpoint>;
   readonly goTo: <T extends string | number | HTMLElement | Vue>(
     target: T,
-    options?: SandboxVueUiFrameworkGoToOptions
+    options?: SandboxVueUiFrameworkGoToOptions,
   ) => Promise<T>;
   application: SandboxVueUiFrameworkApplication;
   options: SandboxVueUiFrameworkOptions;

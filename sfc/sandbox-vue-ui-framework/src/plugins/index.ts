@@ -2,7 +2,7 @@ import OurVue from 'vue';
 import { VueConstructor } from 'vue/types';
 import {
   SandboxVueUiFramework as SandboxVueUiFrameworkPlugin,
-  SandboxVueUiFrameworkUseOptions
+  SandboxVueUiFrameworkUseOptions,
 } from 'src/types';
 import { consoleWarn, consoleError } from '../utils/console';
 
@@ -13,7 +13,9 @@ const SandboxVueUiFramework: SandboxVueUiFrameworkPlugin = {
 
     if (OurVue !== Vue) {
       consoleError(
-        `Multiple instances of Vue detected\nSandbox Vue Ui Framework Vue Version: ${OurVue.version}\nYour Vue Version: ${Vue.version}`
+        `Multiple instances of Vue detected\nSandbox Vue Ui Framework Vue Version: ${
+          OurVue.version
+        }\nYour Vue Version: ${Vue.version}`,
       );
     }
 
@@ -22,7 +24,7 @@ const SandboxVueUiFramework: SandboxVueUiFrameworkPlugin = {
     Vue.prototype.$sandboxVueUiFramework = new Vue();
 
     (function registerComponents(
-      components: SandboxVueUiFrameworkUseOptions['components']
+      components: SandboxVueUiFrameworkUseOptions['components'],
     ) {
       if (components) {
         for (const key in components) {
@@ -39,7 +41,7 @@ const SandboxVueUiFramework: SandboxVueUiFrameworkPlugin = {
       return false;
     })(opts.components);
   },
-  version: '0.1.0'
+  version: '0.1.0',
 };
 
 export function checkVueVersion(Vue: VueConstructor, requiredVue?: string) {
