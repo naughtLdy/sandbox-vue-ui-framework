@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "lib",
+    "lib": ["es2018", "dom"],
+    "target": "es5",
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declarationMap": false,
+    "downlevelIteration": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true
+  },
+  "includes": ["./src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

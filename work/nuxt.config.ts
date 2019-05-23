@@ -1,5 +1,6 @@
 import NuxtConfiguration from '@nuxt/config';
 import { Configuration } from 'webpack';
+import SandboxVueUiFrameworkPlugin from 'sandbox-vue-ui-framework-loader/lib/plugin';
 import { name, description } from './package.json';
 const ExtractCssChunksPlugin = require('extract-css-chunks-webpack-plugin');
 
@@ -48,6 +49,8 @@ const nuxtConfig: NuxtConfiguration = {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['sandbox-vue-ui-framework/src'],
+    plugins: [new SandboxVueUiFrameworkPlugin({})],
     extend(config: Configuration, ctx: any) {
       const cssChunksPlugin: any = config.plugins.find(
         (plugin: any) => plugin instanceof ExtractCssChunksPlugin,
